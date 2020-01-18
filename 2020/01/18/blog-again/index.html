@@ -16,9 +16,13 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="很久没有写博客了，大约两年了吧，最近在看书，突然又想写点东西了。这两年，换了电脑，以前写博客的方法夜全部忘记了，要重新开始配置环境。
+本地环境配置全局安装 hexo1npm install -g hexo-cli
+建站blogName是创建的文件夹的名称 
+123hexo init blogNamecd blogNamenpm install
+到这里本地的博客就创建完成了，输入hexo se...">
   
-  <title>blog-again [ Hexo ]</title>
+  <title>很久之后，重新开始写博客 [ Hexo ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -122,7 +126,7 @@
   
 
   <article id="post">
-    <h1>blog-again</h1>
+    <h1>很久之后，重新开始写博客</h1>
     <p class="page-title-sub">
       <span id = "post-title-date">Created at 2020-01-18</span>
       
@@ -132,14 +136,27 @@
       
     </p>
     
-    
+    <p>很久没有写博客了，大约两年了吧，最近在看书，突然又想写点东西了。这两年，换了电脑，以前写博客的方法夜全部忘记了，要重新开始配置环境。</p>
+<h2 id="本地环境配置"><a href="#本地环境配置" class="headerlink" title="本地环境配置"></a>本地环境配置</h2><h3 id="全局安装-hexo"><a href="#全局安装-hexo" class="headerlink" title="全局安装 hexo"></a>全局安装 hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>blogName是创建的文件夹的名称 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blogName</span><br><span class="line"><span class="built_in">cd</span> blogName</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>到这里本地的博客就创建完成了，输入hexo server就可以在本地运行了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="部署github"><a href="#部署github" class="headerlink" title="部署github"></a>部署github</h2><h3 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="在-config-yml中修改配置"><a href="#在-config-yml中修改配置" class="headerlink" title="在_config.yml中修改配置"></a>在_config.yml中修改配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>到这里我们的基本配置就完成了，写好文章后，用以下命令就可以将文章推到线上了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+
+
   </article>
   <div class="random-toc-area">
   <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
     <h2>Table of Content</h2>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本地环境配置"><span class="toc-text">本地环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局安装-hexo"><span class="toc-text">全局安装 hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建站"><span class="toc-text">建站</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署github"><span class="toc-text">部署github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-hexo-deployer-git"><span class="toc-text">安装 hexo-deployer-git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-config-yml中修改配置"><span class="toc-text">在_config.yml中修改配置</span></a></li></ol></li></ol>
   </div>
 </div>
 
