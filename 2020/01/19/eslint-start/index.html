@@ -1,0 +1,323 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="Winnie">
+  
+  
+  
+  
+    <meta name="description" content="安装依赖在package.json文件中的devDependencies下加入以下依赖，然后cnpm i安装依赖。
+123456789101112"eslint": "^4.15.0","eslint-config-airbnb-base": "^11.3.0","eslint-config-standard": "^13.0.1","eslint-friendly-formatter": ...">
+  
+  <title>在vue项目中配置eslint [ WinnieHu的博客 ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2020/01/18/ES2020/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        ES2020新特性
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="/images/getheadimg.jpg"/>
+          <div id="homelink">WinnieHu的博客</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/">home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives/">archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories/">categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags/">tags</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>在vue项目中配置eslint</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2020-01-19</span>
+      
+        <span id = "post-title-updated">Updated at 2020-01-19</span>
+      
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/eslint/">eslint</a>
+      
+      </span>
+      
+    </p>
+    
+    <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>在package.json文件中的devDependencies下加入以下依赖，然后cnpm i安装依赖。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"eslint"</span>: <span class="string">"^4.15.0"</span>,</span><br><span class="line"><span class="string">"eslint-config-airbnb-base"</span>: <span class="string">"^11.3.0"</span>,</span><br><span class="line"><span class="string">"eslint-config-standard"</span>: <span class="string">"^13.0.1"</span>,</span><br><span class="line"><span class="string">"eslint-friendly-formatter"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line"><span class="string">"eslint-import-resolver-webpack"</span>: <span class="string">"^0.8.3"</span>,</span><br><span class="line"><span class="string">"eslint-loader"</span>: <span class="string">"^1.7.1"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-html"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-import"</span>: <span class="string">"^2.7.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-node"</span>: <span class="string">"^9.1.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-promise"</span>: <span class="string">"^4.2.1"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-standard"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-vue"</span>: <span class="string">"^5.0.0-beta.6"</span>,</span><br></pre></td></tr></table></figure>
+<h2 id="eslintrc-js"><a href="#eslintrc-js" class="headerlink" title=".eslintrc.js"></a>.eslintrc.js</h2><p>在根目录下创建.eslintrc.js文件，.eslintrc.js是一个配置文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  <span class="string">"extends"</span>: [</span><br><span class="line">    // <span class="string">"standard"</span>,</span><br><span class="line">    <span class="string">"plugin:vue/base"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"env"</span>: &#123;</span><br><span class="line">    <span class="string">"browser"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"commonjs"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"es6"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,// 使用babel进行编译,解决import报错：error  Parsing error: Unexpected token import</span><br><span class="line">  <span class="string">"plugins"</span>: [</span><br><span class="line">    <span class="string">"html"</span></span><br><span class="line">  ],//插件，此插件用于识别文件中的js代码，没有MIME类型标识没有script标签也可以识别到，因此拿来识别.vue文件中的js代码</span><br><span class="line">  // <span class="string">"extends"</span>: <span class="string">"eslint:recommended"</span>,//eslint默认推荐规则这里作了注释，使用我们定义的规则</span><br><span class="line">  <span class="string">"parserOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"sourceType"</span>: <span class="string">"module"</span>,</span><br><span class="line">    <span class="string">"ecmaVersion"</span>: 7,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    //这里自定义规则，规则地址:</span><br><span class="line">    //http://eslint.cn/docs/rules/</span><br><span class="line"></span><br><span class="line">    // 不允许使用分号</span><br><span class="line">    <span class="string">'semi'</span>: [2, <span class="string">'never'</span>],</span><br><span class="line">    // 允许使用==</span><br><span class="line">    <span class="string">'eqeqeq'</span>: 2,</span><br><span class="line">    // 缩进风格</span><br><span class="line">    <span class="string">'indent'</span>: [2, 2],</span><br><span class="line">    // 函数圆括号之前没有空格</span><br><span class="line">    <span class="string">'space-before-function-paren'</span>: 2,</span><br><span class="line">    // 函数调用时 函数名与()之间不能有空格</span><br><span class="line">    <span class="string">"no-spaced-func"</span>: 2,</span><br><span class="line">    // 不能用多余的空格</span><br><span class="line">    <span class="string">"no-multi-spaces"</span>: 1,</span><br><span class="line">    // 一行结束后面不要有空格</span><br><span class="line">    <span class="string">"no-trailing-spaces"</span>: 1,</span><br><span class="line">    // 不要求块内空格填充格式</span><br><span class="line">    <span class="string">'padded-blocks'</span>: 0,</span><br><span class="line">    // 开发模式允许使用console</span><br><span class="line">    <span class="string">'no-console'</span>: 0,</span><br><span class="line">    // 单行可忽略大括号，多行不可忽略</span><br><span class="line">    <span class="string">'curly'</span>: [2, <span class="string">'multi-line'</span>],</span><br><span class="line">    // 不允许重复声明变量</span><br><span class="line">    <span class="string">'no-redeclare'</span>: [2, &#123;builtinGlobals: <span class="literal">true</span>&#125;],</span><br><span class="line">    // 确保运算符周围有空格</span><br><span class="line">    <span class="string">'space-infix-ops'</span>: 2,</span><br><span class="line">    // 统一逗号周围空格风格</span><br><span class="line">    <span class="string">'comma-spacing'</span>: [2, &#123;<span class="string">'before'</span>: <span class="literal">false</span>, <span class="string">'after'</span>: <span class="literal">true</span>&#125;],</span><br><span class="line">    // 禁止出现多个空行</span><br><span class="line">    <span class="string">'no-multiple-empty-lines'</span>: [2, &#123;<span class="string">'max'</span>: 1, <span class="string">'maxEOF'</span>: 2&#125;],</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rules中写的是具体的校验规则，我们可以根据自己的需要修改。这里需要注意的是ESLint的规则有三种级别：</p>
+<ul>
+<li>“off”或者0，不启用这个规则</li>
+<li>“warn”或者1，出现问题会有警告</li>
+<li>“error”或者2，出现问题会报错</li>
+</ul>
+<h2 id="eslintignore"><a href="#eslintignore" class="headerlink" title=".eslintignore"></a>.eslintignore</h2><p>在根目录下创建 .eslintignore文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build/*.js</span><br><span class="line">config/*.js</span><br><span class="line">src/assets</span><br></pre></td></tr></table></figure>
+<h2 id="配置-config-index-js"><a href="#配置-config-index-js" class="headerlink" title="配置/config/index.js"></a>配置/config/index.js</h2><p>在/config/index.js文件中，在dev下面添加如下两条配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useEslint: <span class="literal">true</span>,</span><br><span class="line">showEslintErrorsInOverlay: <span class="literal">true</span> // 错误提示是否需要在浏览器界面中提示</span><br></pre></td></tr></table></figure>
+<h2 id="配置-build-webpack-base-conf-js"><a href="#配置-build-webpack-base-conf-js" class="headerlink" title="配置\build\webpack.base.conf.js"></a>配置\build\webpack.base.conf.js</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const createLintingRule = () =&gt; (&#123;</span><br><span class="line">  <span class="built_in">test</span>: /\.(js|vue)$/,</span><br><span class="line">  loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">  enforce: <span class="string">'pre'</span>,</span><br><span class="line">  include: [resolve(<span class="string">'src'</span>), resolve(<span class="string">'test'</span>)],</span><br><span class="line">  options: &#123;</span><br><span class="line">    formatter: require(<span class="string">'eslint-friendly-formatter'</span>),</span><br><span class="line">    emitWarning: !config.dev.showEslintErrorsInOverlay</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">test</span>: /\.vue$/,</span><br><span class="line">      loader: <span class="string">'vue-loader'</span>,</span><br><span class="line">      options: vueLoaderConfig</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">test</span>: /\.js$/,</span><br><span class="line">      loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">      include: [resolve(<span class="string">'src'</span>), resolve(<span class="string">'test'</span>), resolve(<span class="string">'node_modules/webpack-dev-server/client'</span>)]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">test</span>: /\.(png|jpe?g|gif|svg)(\?.*)?$/,</span><br><span class="line">      loader: <span class="string">'url-loader'</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">        <span class="built_in">limit</span>: 10000,</span><br><span class="line">        name: utils.assetsPath(<span class="string">'img/[name].[hash:7].[ext]'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">test</span>: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,</span><br><span class="line">      loader: <span class="string">'url-loader'</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">        <span class="built_in">limit</span>: 10000,</span><br><span class="line">        name: utils.assetsPath(<span class="string">'media/[name].[hash:7].[ext]'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">test</span>: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,</span><br><span class="line">      loader: <span class="string">'url-loader'</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">        <span class="built_in">limit</span>: 10000,</span><br><span class="line">        name: utils.assetsPath(<span class="string">'fonts/[name].[hash:7].[ext]'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    ...(config.dev.useEslint ? [createLintingRule()] : [])</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="忽略"><a href="#忽略" class="headerlink" title="忽略"></a>忽略</h2><h3 id="忽略某些文件"><a href="#忽略某些文件" class="headerlink" title="忽略某些文件"></a>忽略某些文件</h3><p>有两种方法：</p>
+<ol>
+<li>在.eslintignore中配置</li>
+<li>在文件的顶部放 /* eslint-disable */</li>
+</ol>
+<h3 id="忽略代码块"><a href="#忽略代码块" class="headerlink" title="忽略代码块"></a>忽略代码块</h3><p>将需要忽略的代码块包裹起来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/* eslint-disable */</span><br><span class="line">alert(<span class="string">'foo'</span>);</span><br><span class="line">/* eslint-enable */</span><br></pre></td></tr></table></figure>
+<h3 id="忽略某一行代码"><a href="#忽略某一行代码" class="headerlink" title="忽略某一行代码"></a>忽略某一行代码</h3><p>有两种方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'foo'</span>); // eslint-disable-line</span><br><span class="line"></span><br><span class="line">// eslint-disable-next-line</span><br><span class="line">alert(<span class="string">'foo'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装依赖"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eslintrc-js"><span class="toc-text">.eslintrc.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eslintignore"><span class="toc-text">.eslintignore</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-config-index-js"><span class="toc-text">配置&#x2F;config&#x2F;index.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-build-webpack-base-conf-js"><span class="toc-text">配置\build\webpack.base.conf.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#忽略"><span class="toc-text">忽略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#忽略某些文件"><span class="toc-text">忽略某些文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#忽略代码块"><span class="toc-text">忽略代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#忽略某一行代码"><span class="toc-text">忽略某一行代码</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2020/01/18/ES2020/" class="next">Next post ES2020新特性 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Winnie using
+      <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random" target="_blank" rel="noopener">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="/images/getheadimg.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
