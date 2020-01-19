@@ -16,13 +16,12 @@
   
   
   
-    <meta name="description" content="说明：以前的博客丢失了，根据找回的代码，重新写的
-创建新文章“newTitle” 是文件名称也是默认的文章名称，文章名称是可以修改的
-1hexo new post "newTitle"
-在/source/_posts/newTitle.md中设置tag和categorise
-1234title: 开始写第一篇博客date: 2017-05-22 15:11:08tags: 'hexo'cat...">
+    <meta name="description" content="设置主题在hexo官网中选择喜欢的主题，点击主题名字获取主题的安装及配置方式。
+自定义头像选择一张合适的图片，放在主题文件夹下，这里以主题random为例，图片的路径为’/themes/random/source/images/avatar.jpg’。然后在项目的配置文件_config.yml中配置avatar：
+1avatar: '/images/avatar.jpg'
+配置tags创建页...">
   
-  <title>开始写第一篇博客 [ WinnieHu的博客 ]</title>
+  <title>设置博客样式 [ WinnieHu的博客 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -44,14 +43,23 @@
 <div class="side-navigate hide-area">
   
     <div class="item prev">
-      <a href="/2017/05/22/blogStyle/">
+      <a href="/2020/01/18/ES2020/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        设置博客样式
+        ES2020新特性
       </div>
     </div>
   
+  
+    <div class="item next">
+      <a href="/2020/01/18/write-hexo/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        开始写第一篇博客
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -112,9 +120,9 @@
   
 
   <article id="post">
-    <h1>开始写第一篇博客</h1>
+    <h1>设置博客样式</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2017-05-22</span>
+      <span id = "post-title-date">Created at 2020-01-18</span>
       
         <span id = "post-title-updated">Updated at 2020-01-18</span>
       
@@ -141,39 +149,17 @@
       
     </p>
     
-    <p>说明：以前的博客丢失了，根据找回的代码，重新写的</p>
-<h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><p>“newTitle” 是文件名称也是默认的文章名称，文章名称是可以修改的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"newTitle"</span></span><br></pre></td></tr></table></figure>
-<p>在/source/_posts/newTitle.md中设置tag和categorise</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 开始写第一篇博客</span><br><span class="line">date: 2017-05-22 15:11:08</span><br><span class="line">tags: <span class="string">'hexo'</span></span><br><span class="line">categories: <span class="string">'学习'</span></span><br></pre></td></tr></table></figure>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">功能</th>
-<th align="left">路径</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">post</td>
-<td align="left">新建文章</td>
-<td align="left">/source/_posts/</td>
-</tr>
-<tr>
-<td align="left">draft</td>
-<td align="left">新建草稿</td>
-<td align="left">/source/_draft/</td>
-</tr>
-<tr>
-<td align="left">page</td>
-<td align="left">新建页面（标签页，分类页等）</td>
-<td align="left">/source/</td>
-</tr>
-</tbody></table>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>写博客时，用的markdown语法，相对比较简单，这里就不细说了，参考 <a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Markdown基本语法</a></p>
-<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
+    <h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><p>在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo官网</a>中选择喜欢的主题，点击主题名字获取主题的安装及配置方式。</p>
+<h2 id="自定义头像"><a href="#自定义头像" class="headerlink" title="自定义头像"></a>自定义头像</h2><p>选择一张合适的图片，放在主题文件夹下，这里以主题random为例，图片的路径为’/themes/random/source/images/avatar.jpg’。然后在项目的配置文件_config.yml中配置avatar：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: <span class="string">'/images/avatar.jpg'</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置tags"><a href="#配置tags" class="headerlink" title="配置tags"></a>配置tags</h2><h3 id="创建页面"><a href="#创建页面" class="headerlink" title="创建页面"></a>创建页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在’/tags/index.md’中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Tag</span><br><span class="line">date: 2020-01-18 15:01:32</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
+<p>在_config.yml中配置如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives/</span><br><span class="line">  categories: /categories/</span><br><span class="line">  tags: /tags/</span><br></pre></td></tr></table></figure>
+<p>文章中，我们只需要如下配置:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 设置博客样式</span><br><span class="line">date: 2017-05-22 16:23:24</span><br><span class="line">tags: <span class="string">'hexo'</span></span><br><span class="line">categories: <span class="string">'学习'</span></span><br></pre></td></tr></table></figure>
+<p>然后我们就能在tags界面下的对应标签中看着这些文章了，如果要配置categories，方法和配置tags相同。</p>
 
   </article>
   <div class="random-toc-area">
@@ -181,18 +167,20 @@
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
     <h2>Table of Content</h2>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建新文章"><span class="toc-text">创建新文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预览"><span class="toc-text">预览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置主题"><span class="toc-text">设置主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义头像"><span class="toc-text">自定义头像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置tags"><span class="toc-text">配置tags</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建页面"><span class="toc-text">创建页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li></ol></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2017/05/22/blogStyle/" class="prev">&larr; Prev post 设置博客样式</a>
+    <a href="/2020/01/18/ES2020/" class="prev">&larr; Prev post ES2020新特性</a>
   
 
   
 
+  
+    <a href="/2020/01/18/write-hexo/" class="next">Next post 开始写第一篇博客 &rarr;</a>
   
 </nav>
 
