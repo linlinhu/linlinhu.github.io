@@ -16,10 +16,11 @@
   
   
   
-    <meta name="description" content="设置主题在hexo官网中选择喜欢的主题，点击主题名字获取主题的安装及配置方式。
-自定义头像选择一张合适的图片，放在主题文件夹下，这里以主题random为例，图片的路径为’/themes/random/source/images/avatar.jpg’。然后在项目的配置文件_config.yml中配置avatar：
-1avatar: '/images/avatar.jpg'
-配置tags创建页...">
+    <meta name="description" content="设置主题在hexo官网中选择喜欢的主题，点击主题名字获取主题的安装及配置方式。这里以random为例：
+1git clone https://github.com/stiekel/hexo-theme-random.git themes/random
+然后修改博客的主配置文件，将主题设置为 random：
+1theme: random
+自定义头像选择一张合适的图片，放在主题文件夹下，图片的路...">
   
   <title>设置博客样式 [ WinnieHu的博客 ]</title>
   
@@ -124,7 +125,7 @@
     <p class="page-title-sub">
       <span id = "post-title-date">Created at 2020-01-18</span>
       
-        <span id = "post-title-updated">Updated at 2020-01-18</span>
+        <span id = "post-title-updated">Updated at 2020-03-10</span>
       
       
       <span id = "post-title-categories">Category
@@ -149,8 +150,11 @@
       
     </p>
     
-    <h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><p>在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo官网</a>中选择喜欢的主题，点击主题名字获取主题的安装及配置方式。</p>
-<h2 id="自定义头像"><a href="#自定义头像" class="headerlink" title="自定义头像"></a>自定义头像</h2><p>选择一张合适的图片，放在主题文件夹下，这里以主题random为例，图片的路径为’/themes/random/source/images/avatar.jpg’。然后在项目的配置文件_config.yml中配置avatar：</p>
+    <h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><p>在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo官网</a>中选择喜欢的主题，点击主题名字获取主题的安装及配置方式。这里以random为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/stiekel/hexo-theme-random.git themes/random</span><br></pre></td></tr></table></figure>
+<p>然后修改博客的主配置文件，将主题设置为 random：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: random</span><br></pre></td></tr></table></figure>
+<h2 id="自定义头像"><a href="#自定义头像" class="headerlink" title="自定义头像"></a>自定义头像</h2><p>选择一张合适的图片，放在主题文件夹下，图片的路径为’/themes/random/source/images/avatar.jpg’。然后在项目的主配置文件_config.yml中配置avatar：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: <span class="string">'/images/avatar.jpg'</span></span><br></pre></td></tr></table></figure>
 <h2 id="配置tags"><a href="#配置tags" class="headerlink" title="配置tags"></a>配置tags</h2><h3 id="创建页面"><a href="#创建页面" class="headerlink" title="创建页面"></a>创建页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在’/tags/index.md’中配置：</p>
