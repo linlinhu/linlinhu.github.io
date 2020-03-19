@@ -1,8 +1,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,11 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="有一个项目，用户改接口数据，引起了一些异常，于是想对接口数据进行加密，为了快速实现，选用的base64加密。
+安装依赖1npm install --save js-base64
+在使用base64的文件中引入base64123let Base64 = require('js-base64').Base64;Base64.encode('123'); // 加密结果 MTIzNDU2Base6...">
   
-  <title>Tag: hexo [ WinnieHu的博客 ]</title>
+  <title>使用base64对接口加密 [ WinnieHu的博客 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -41,6 +41,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2020/03/11/preview-pdf/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        在vue项目中预览PDF
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -80,7 +89,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/tags/">tags</a>
             
@@ -98,193 +107,77 @@
     <div id="content-inner">
       
       
-  <div id="tag">
-    <h1>hexo</h1>
-    
+  
+
+  <article id="post">
+    <h1>使用base64对接口加密</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2020-03-19</span>
+      
+        <span id = "post-title-updated">Updated at 2020-03-19</span>
+      
+      
+      <span id = "post-title-categories">Category
       
       
         
+        
+        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+      
+        
+          /
+        
+        
+        <a href="/categories/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E7%AB%AF/">前端</a>
+      
+      </span>
       
       
-    
+      <span id = "post-title-tags">
+      Tag
       
       
         
-          
         
+        <a href="/tags/vue/">vue</a>
       
+      </span>
       
-      <div class="post-title-item">
-  
-  <a href="/2020/01/18/blog-again/">
-  
-    很久之后，重新开始写博客
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">1-18</span>
+    </p>
     
-    <span id = "post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    Tag
-    
-    
-      
-      
-      <a href="/tags/hexo/">hexo</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2020/01/18/write-hexo/">
-  
-    开始写第一篇博客
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">1-18</span>
-    
-    <span id = "post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    Tag
-    
-    
-      
-      
-      <a href="/tags/hexo/">hexo</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2020/01/18/blogStyle/">
-  
-    设置博客样式
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">1-18</span>
-    
-    <span id = "post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    Tag
-    
-    
-      
-      
-      <a href="/tags/hexo/">hexo</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-      
-      
-    
+    <p>有一个项目，用户改接口数据，引起了一些异常，于是想对接口数据进行加密，为了快速实现，选用的base64加密。</p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save js-base64</span><br></pre></td></tr></table></figure>
+<h3 id="在使用base64的文件中引入base64"><a href="#在使用base64的文件中引入base64" class="headerlink" title="在使用base64的文件中引入base64"></a>在使用base64的文件中引入base64</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> Base64 = require(<span class="string">'js-base64'</span>).Base64;</span><br><span class="line">Base64.encode(<span class="string">'123'</span>); // 加密结果 MTIzNDU2</span><br><span class="line">Base64.decode(<span class="string">'MTIzNDU2'</span>); // 解密</span><br></pre></td></tr></table></figure>
+<p>base64的使用很简单，在项目中，只有生产环境加密，测试环境和开发环境不加密，所以还对环境状态进行了判断。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> Base64Encode (data) &#123;</span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">'production'</span> &amp;&amp; data) &#123; // 只有生产环境加密</span><br><span class="line">    <span class="built_in">return</span> Base64.encode(JSON.stringify(data))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> Base64Decode (data) &#123;</span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">'production'</span> &amp;&amp; data) &#123; // 只有生产环境解密</span><br><span class="line">    <span class="built_in">return</span> JSON.parse(Base64.decode(data))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在使用base64的文件中引入base64"><span class="toc-text">在使用base64的文件中引入base64</span></a></li></ol>
   </div>
+</div>
 
   
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2020/03/11/preview-pdf/" class="next">Next post 在vue项目中预览PDF &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
